@@ -66,4 +66,21 @@ in unit turing, 3 subprograms and packages out of 3 analyzed
   Turing.Comp at turing.ads:15 flow analyzed (0 errors and 0 warnings) and proved (10 checks)
   Turing.Factorial at turing.ads:3 flow analyzed (0 errors and 0 warnings) and proved (9 checks)
   ```
+
+## Usuwanie zbędnych plików
   
+```
+$ gprclean
+using project file turing.gpr
+"/Users/przemko/Documents/lang/formal-verification/spark/turing/turing.o" has been deleted
+"/Users/przemko/Documents/lang/formal-verification/spark/turing/turing.ali" has been deleted
+"/Users/przemko/Documents/lang/formal-verification/spark/turing/main.o" has been deleted
+"/Users/przemko/Documents/lang/formal-verification/spark/turing/main.ali" has been deleted
+"/Users/przemko/Documents/lang/formal-verification/spark/turing/main" has been deleted
+"/Users/przemko/Documents/lang/formal-verification/spark/turing/b__main.o" has been deleted
+"/Users/przemko/Documents/lang/formal-verification/spark/turing/b__main.ads" has been deleted
+"/Users/przemko/Documents/lang/formal-verification/spark/turing/b__main.adb" has been deleted
+"/Users/przemko/Documents/lang/formal-verification/spark/turing/b__main.ali" has been deleted
+"/Users/przemko/Documents/lang/formal-verification/spark/turing/main.bexch" has been deleted
+$ gnatprove -P turing.gpr --clean
+```
