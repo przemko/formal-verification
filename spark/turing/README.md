@@ -55,9 +55,6 @@ in unit turing, 3 subprograms and packages out of 3 analyzed
 Gdyby mimo zastosowania programu dowodzącego **Z3** nie powiodło się udowodnienie wszystkich warunków, wówczas można zadać większą liczbę dopuszczalnych kroków dowodzenia stosując parametr **--steps=N**:
 ```
 $ gnatprove -P turing.gpr --prover=z3 --steps=250
-Phase 1 of 2: generation of Global contracts ...
-Phase 2 of 2: flow analysis and proof ...
-Summary logged in /Users/przemko/Documents/lang/formal-verification/spark/turing/gnatprove/gnatprove.out
 ```
 
 ## Usuwanie zbędnych plików
