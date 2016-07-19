@@ -18,44 +18,30 @@ $ ./main
 ## Formalna weryfikacja
 
 ```
-$ gnatprove -P turing.gpr --level=0
-Phase 1 of 2: generation of Global contracts ...
-Phase 2 of 2: flow analysis and proof ...
-turing.adb:9:33: medium: loop invariant might fail after first iteration, cannot prove U = Factorial (R)
-turing.adb:12:20: medium: overflow check might fail
-turing.ads:5:30: medium: range check might fail
-turing.ads:5:30: medium: overflow check might fail
-turing.ads:18:16: medium: postcondition might fail, cannot prove Comp'Result = Factorial (N)
-Summary logged in /Users/przemko/Documents/lang/formal-verification/spark/turing/gnatprove/gnatprove.out
-```
-Jak widać poziom zerowy jest za niski. Nie udało się automatycznie udowodnić jednego niezmiennika, trzech warunków związanych z zakresami i jednego kontraktu Post.
-```
-$ gnatprove -P turing.gpr --level=1
+$ gnatprove -P turing.gpr --prover=z3
 Phase 1 of 2: generation of Global contracts ...
 Phase 2 of 2: flow analysis and proof ...
 Summary logged in /Users/przemko/Documents/lang/formal-verification/spark/turing/gnatprove/gnatprove.out
 ```
-Na poziomie pierwszym zostały udowodnione wszystkie warunki.
-
 Zawartość pliku z raportem:
 ```
 $ more gnatprove/gnatprove.out 
 Summary of SPARK analysis
 =========================
 
----------------------------------------------------------------------------------------------------------------------
-SPARK Analysis results        Total       Flow   Interval   CodePeer                   Provers   Justified   Unproved
----------------------------------------------------------------------------------------------------------------------
-Data Dependencies                 .          .          .          .                         .           .          .
-Flow Dependencies                 .          .          .          .                         .           .          .
-Initialization                    7          7          .          .                         .           .          .
-Non-Aliasing                      .          .          .          .                         .           .          .
-Run-time Checks                   8          .          .          .    8 (CVC4  56%, Z3  44%)           .          .
-Assertions                        4          .          .          .    4 (CVC4  75%, Z3  25%)           .          .
-Functional Contracts              7          .          .          .    7 (CVC4  86%, Z3  14%)           .          .
-LSP Verification                  .          .          .          .                         .           .          .
----------------------------------------------------------------------------------------------------------------------
-Total                            26    7 (27%)          .          .                  19 (73%)           .          .
+-------------------------------------------------------------------------------------------------------
+SPARK Analysis results        Total       Flow   Interval   CodePeer     Provers   Justified   Unproved
+-------------------------------------------------------------------------------------------------------
+Data Dependencies                 .          .          .          .           .           .          .
+Flow Dependencies                 .          .          .          .           .           .          .
+Initialization                    7          7          .          .           .           .          .
+Non-Aliasing                      .          .          .          .           .           .          .
+Run-time Checks                   8          .          .          .      8 (Z3)           .          .
+Assertions                        4          .          .          .      4 (Z3)           .          .
+Functional Contracts              7          .          .          .      7 (Z3)           .          .
+LSP Verification                  .          .          .          .           .           .          .
+-------------------------------------------------------------------------------------------------------
+Total                            26    7 (27%)          .          .    19 (73%)           .          .
 
 
 Analyzed 2 units
