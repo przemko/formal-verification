@@ -1,0 +1,2 @@
+gnatprove -P automata.gpr
+
