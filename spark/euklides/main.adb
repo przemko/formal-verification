@@ -11,7 +11,7 @@ procedure Main is
    Z : Positive;
 
 begin
-   Put_Line ("Rozwiązywanie równanie Ax + By = z w zbiorze liczb całkowitych.");
+   Put_Line ("Rozwiązywanie równania Ax + By = z w zbiorze liczb całkowitych.");
    Put_Line ("Podaj A: ");
    Get (A);
    Put_Line ("Podaj B: ");
