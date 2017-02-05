@@ -1,3 +1,5 @@
+-- $ gnatprove -P euklides.gpr --level=2
+
 with Ada.Text_IO; use Ada.Text_IO;
 with Euklides;    use Euklides;
 
