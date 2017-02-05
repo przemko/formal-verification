@@ -1,3 +1,5 @@
+-- $ gnatprove -P automata.gpr
+
 with Ada.Text_IO; use Ada.Text_IO;
 with Automata;   use Automata;
 
