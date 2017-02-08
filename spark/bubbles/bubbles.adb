@@ -3,6 +3,7 @@ package body Bubbles with SPARK_Mode is
    procedure Sort (T : in out Table) is
    begin
       for I in reverse T'First .. T'Last - 1 loop
+         pragma Loop_Invariant (Is_Sorted (T (I + 1 .. T'Last)));
          for J in T'First .. I loop
             if T (J) > T (J + 1) then
                declare
@@ -13,7 +14,6 @@ package body Bubbles with SPARK_Mode is
                end;
             end if;
             pragma Loop_Invariant (Is_Maximum (T (T'First .. I), T (I)));
-            pragma Loop_Invariant (Is_Sorted (T (I .. T'Last)));
          end loop;
       end loop;
    end Sort;
