@@ -1,34 +1,37 @@
 package body Bubbles with SPARK_Mode is
 
-   procedure Sort (T : in out Table) is
-
-      T_Last : Table (T'Range) with Ghost;
-
+   procedure Swap (T : in out Table; I : in Integer; J : in Integer) is
+      Temp : Integer := T (I);
    begin
-      for I in reverse T'First .. T'Last loop
+      T (I) := T (J);
+      T (J) := Temp;
+   end Swap;
 
-         T_Last := T;
+   procedure Bubble (T : in out Table; I : in Integer) is
+   begin
+      for J in T'First .. I - 1 loop
 
-         pragma Loop_Invariant (Is_Sorted (T (I  .. T'Last)));
+         if T (J) > T (J + 1) then
 
-         for J in T'First .. I - 1 loop
+            Swap (T, J, J + 1);
 
-            if T (J) > T (J + 1) then
-               declare
-                  Temp : Integer := T (J);
-               begin
-                  T (J) := T (J + 1);
-                  T (J + 1) := Temp;
-               end;
-            end if;
-
-            pragma Loop_Invariant (Is_Maximum (T (T'First .. J + 1), T (J + 1)));
-
-         end loop;
-
-         pragma Assert (for all J in I + 1 .. T'Last => T (J) = T_Last (J));
+         end if;
 
       end loop;
+   end Bubble;
+
+   procedure Sort (T : in out Table) is
+   begin
+
+      for I in reverse T'First .. T'Last loop
+
+         Bubble (T, I);
+
+         pragma Loop_Invariant (for all J in I .. T'Last - 1 => T(J) <= T (J + 1));
+
+      end loop;
+
    end Sort;
 
 end Bubbles;
+
