@@ -17,7 +17,12 @@ package body Bubbles with SPARK_Mode is
 
          end if;
 
+         pragma Loop_Invariant (for all K in T'First .. J => T(J+1) >= T(K));
+
       end loop;
+
+      pragma Assert (for all J in T'First .. I => T(I) >= T(J));
+
    end Bubble;
 
    procedure Sort (T : in out Table) is
