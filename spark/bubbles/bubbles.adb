@@ -32,6 +32,7 @@ package body Bubbles with SPARK_Mode is
 
          Bubble (T, I);
 
+         pragma Assert (if I < T'Last then T(I) <= T (I+1));
          pragma Loop_Invariant (for all J in I .. T'Last - 1 => T(J) <= T (J + 1));
 
 
