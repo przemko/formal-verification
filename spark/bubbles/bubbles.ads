@@ -5,15 +5,20 @@ package Bubbles with SPARK_Mode is
    procedure Swap (T : in out Table; I : in Integer; J : in Integer)
      with
        Depends => (T => (T, I, J)),
-       Pre => T'Length > 1 and then I in T'Range and then J in T'Range and then I < J,
+       Pre => T'Length > 1 and then I in T'Range and then J in T'Range and then I /= J,
      Post => (for all K in T'Range => (if K /= I and then K /= J then T (K) = T'Old (K))) and then
                 T (I) = T'Old (J) and then T (J) = T'Old (I);
 
    procedure Bubble (T : in out Table; I : in Integer)
      with
        Depends => (T => (T, I)),
-       Pre => T'Length > 0 and then I in T'Range and then T'First > Integer'First and then T'Last < Integer'Last,
-     Post => (for all J in T'First .. I => T(J) <= T(I));
+       Pre => T'Length > 0
+       and then I in T'Range
+       and then T'First > Integer'First
+       and then T'Last < Integer'Last,
+       Post =>
+         (for all J in T'First .. I => T(J) <= T(I))
+         and then (for all J in I + 1 .. T'Last => T (J) = T'Old (J));
 
    procedure Sort (T : in out Table)
      with

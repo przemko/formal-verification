@@ -8,6 +8,7 @@ package body Bubbles with SPARK_Mode is
    end Swap;
 
    procedure Bubble (T : in out Table; I : in Integer) is
+      Prev_T : Table(T'Range) := T with Ghost;
    begin
       for J in T'First .. I - 1 loop
 
@@ -17,11 +18,10 @@ package body Bubbles with SPARK_Mode is
 
          end if;
 
+         pragma Loop_Invariant (for all K in I + 1 .. T'Last => T(K) = Prev_T (K));
          pragma Loop_Invariant (for all K in T'First .. J => T(J+1) >= T(K));
 
       end loop;
-
-      pragma Assert (for all J in T'First .. I => T(I) >= T(J));
 
    end Bubble;
 
@@ -33,6 +33,7 @@ package body Bubbles with SPARK_Mode is
          Bubble (T, I);
 
          pragma Loop_Invariant (for all J in I .. T'Last - 1 => T(J) <= T (J + 1));
+
 
       end loop;
 
