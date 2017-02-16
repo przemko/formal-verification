@@ -26,15 +26,16 @@ package body Bubbles with SPARK_Mode is
    end Bubble;
 
    procedure Sort (T : in out Table) is
+      Prev_T : Table (T'Range) with Ghost;
    begin
 
       for I in reverse T'First .. T'Last loop
+         Prev_T := T;
 
          Bubble (T, I);
 
-         pragma Assert (if I < T'Last then T(I) <= T (I+1));
-         pragma Loop_Invariant (for all J in I .. T'Last - 1 => T(J) <= T (J + 1));
-
+         pragma Assert (if I < T'Last then T(I) <= T(I + 1));
+         pragma Loop_Invariant (for all J in I .. T'Last - 1 => T(J) <= T(J + 1));
 
       end loop;
 
