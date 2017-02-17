@@ -1,3 +1,5 @@
+with Ada.Text_IO; use Ada.Text_IO;
+
 package body Bubbles with SPARK_Mode is
 
    procedure Swap (T : in out Table; I : in Positive; J : in Positive) is
@@ -8,7 +10,6 @@ package body Bubbles with SPARK_Mode is
    end Swap;
 
    procedure Bubble (T : in out Table; I : in Positive) is
-      Prev_T : Table(T'Range) := T with Ghost;
    begin
       for J in T'First .. I - 1 loop
 
@@ -18,8 +19,13 @@ package body Bubbles with SPARK_Mode is
 
          end if;
 
-         pragma Loop_Invariant (for all K in I + 1 .. T'Last => T(K) = Prev_T (K));
-         pragma Loop_Invariant (for all K in T'First .. J => T(J+1) >= T(K));
+         pragma Loop_Invariant
+           (for all K in I + 1 .. T'Last =>
+              T(K) = T'Loop_Entry (K));
+
+         pragma Loop_Invariant
+           (for all K in T'First .. J =>
+              T(K) <= T(J + 1));
 
       end loop;
 
@@ -32,11 +38,14 @@ package body Bubbles with SPARK_Mode is
 
          Bubble (T, I);
 
+         -- udowodnic ponizsza assercje:
+         pragma Assert
+           (if I < T'Last then T (I) <= T (I + 1));
+
          pragma Loop_Invariant
            (for all J in I .. T'Last =>
               (for all K in T'First .. J =>
                    T(K) <= T(J)));
-
 
       end loop;
 
