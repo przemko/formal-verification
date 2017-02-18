@@ -1,5 +1,3 @@
-with Ada.Text_IO; use Ada.Text_IO;
-
 package body Bubbles with SPARK_Mode is
 
    procedure Swap (T : in out Table; I : in Positive; J : in Positive) is
