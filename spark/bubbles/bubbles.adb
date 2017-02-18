@@ -32,7 +32,8 @@ package body Bubbles with SPARK_Mode is
    procedure Sort (T : in out Table) is
    begin
 
-      for I in reverse T'Range  loop
+      for I in reverse T'Range loop
+
 
          Bubble (T, I);
 
