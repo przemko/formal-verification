@@ -5,3 +5,10 @@ theory List
   type list 'a = Nil | Cons 'a (list 'a)
 end
 
+predicate mem (x: 'a) (l: list 'a) = match l with
+  | Nil -> false
+  | Cons y r -> x = y \/ mem x r
+end
+
+goal G1: mem 2 (Cons 1 (Cons 2 (Cons 3 Nil)))
+
