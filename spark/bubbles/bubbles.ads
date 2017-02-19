@@ -18,6 +18,7 @@ package Bubbles with SPARK_Mode is
        and then T'Last < Positive'Last,
        Post =>
          (for all J in T'First .. I => T(J) <= T(I))
+         and then (for some J in T'First .. I => T(I) = T'Old (J))
          and then (for all J in I + 1 .. T'Last => T (J) = T'Old (J));
 
    procedure Sort (T : in out Table)
@@ -29,6 +30,8 @@ package Bubbles with SPARK_Mode is
        T'Last < Positive'Last  and then
        T'First > Positive'First and then
        T'First < Positive'Last,
-       Post => (for all I in T'First .. T'Last - 1 => T(I) <= T(I + 1));
+       Post => (for all I1 in T'Range =>
+                  (for all I2 in T'Range =>
+                     (if I1 < I2 then T(I1) <= T(I2))));
 
 end Bubbles;

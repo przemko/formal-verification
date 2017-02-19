@@ -17,6 +17,11 @@ package body Bubbles with SPARK_Mode is
 
          end if;
 
+         -- udowodnic ponizszy niezmiennik petli:
+         pragma Loop_Invariant
+           (for some K in T'First .. J + 1 =>
+              T(J + 1) = T'Loop_Entry (K));
+
          pragma Loop_Invariant
            (for all K in I + 1 .. T'Last =>
               T(K) = T'Loop_Entry (K));
@@ -34,12 +39,7 @@ package body Bubbles with SPARK_Mode is
 
       for I in reverse T'Range loop
 
-
          Bubble (T, I);
-
-         -- udowodnic ponizsza assercje:
-         pragma Assert
-           (if I < T'Last then T (I) <= T (I + 1));
 
          pragma Loop_Invariant
            (for all J in I .. T'Last =>
