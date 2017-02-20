@@ -20,7 +20,7 @@ package body Bubbles with SPARK_Mode is
          -- udowodnic ponizszy niezmiennik petli:
          pragma Loop_Invariant
            (for some K in T'First .. J + 1 =>
-              T(J + 1) = T'Loop_Entry (K));
+                 T(J + 1) = T'Loop_Entry (K));
 
          pragma Loop_Invariant
            (for all K in I + 1 .. T'Last =>
