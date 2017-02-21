@@ -9,26 +9,25 @@ package body Bubbles with SPARK_Mode is
 
    procedure Bubble (T : in out Table; I : in Positive) is
    begin
-      for J in T'First .. I - 1 loop
+      for J in T'First + 1 .. I loop
 
-         if T (J) > T (J + 1) then
+         if T (J - 1) > T (J) then
 
-            Swap (T, J, J + 1);
+            Swap (T, J - 1, J);
 
          end if;
 
-         -- udowodnic ponizszy niezmiennik petli:
          pragma Loop_Invariant
-           (for some K in T'First .. J + 1 =>
-                 T(J + 1) = T'Loop_Entry (K));
+           (for some K in T'First .. J =>
+                 T(J) = T'Loop_Entry (K));
 
          pragma Loop_Invariant
-           (for all K in I + 1 .. T'Last =>
+           (for all K in J + 1 .. T'Last =>
               T(K) = T'Loop_Entry (K));
 
          pragma Loop_Invariant
            (for all K in T'First .. J =>
-              T(K) <= T(J + 1));
+              T(K) <= T(J));
 
       end loop;
 

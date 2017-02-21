@@ -1,5 +1,3 @@
--- gnatprove -P bubbles.gpr --prover=z3
-
 with Ada.Text_IO; use Ada.Text_IO;
 with Bubbles; use Bubbles;
 
