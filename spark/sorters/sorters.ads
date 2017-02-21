@@ -1,4 +1,4 @@
--- gnatprove -P sorters.gpr --level=2
+-- gnatprove -P sorters.gpr --level=1
 --
 -- Przyklad z ksiazki John W. McCormick, Peter C. Chapin. Building High
 -- Integrity Applications with SPARK. Cambridge University Press, 2015
