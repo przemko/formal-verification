@@ -3,5 +3,5 @@ with F91;
 
 procedure Main is
 begin
-   Put_Line(Integer'Image (F91 (100)));
+   Put_Line(Integer'Image (F91 (1)));
 end Main;
