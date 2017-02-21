@@ -1,0 +1,24 @@
+Summary of SPARK analysis
+=========================
+
+-------------------------------------------------------------------------------------------------------------------------------------
+SPARK Analysis results        Total        Flow   Interval   CodePeer                                 Provers   Justified    Unproved
+-------------------------------------------------------------------------------------------------------------------------------------
+Data Dependencies                 .           .          .          .                                       .           .           .
+Flow Dependencies                 .           .          .          .                                       .           .           .
+Initialization                   41          41          .          .                                       .           .           .
+Non-Aliasing                      .           .          .          .                                       .           .           .
+Run-time Checks                  32           .          .          .                 16 (CVC4  88%, Z3  13%)           .          16
+Assertions                        6           .          .          .    6 (CVC4  67%, Z3  17%, altergo  17%)           .           .
+Functional Contracts              1           .          .          .                                  1 (Z3)           .           .
+LSP Verification                  .           .          .          .                                       .           .           .
+-------------------------------------------------------------------------------------------------------------------------------------
+Total                            80    41 (51%)          .          .                                23 (29%)           .    16 (20%)
+
+
+Analyzed 2 units
+in unit euklides, 2 subprograms and packages out of 2 analyzed
+  Euklides at euklides.ads:1 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  Euklides.Solve at euklides.ads:3 flow analyzed (0 errors and 0 warnings) and not proved, 23 checks out of 39 proved
+in unit main, 0 subprograms and packages out of 1 analyzed
+  Main at main.adb:6 skipped
