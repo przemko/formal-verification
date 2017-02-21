@@ -1,0 +1,25 @@
+Summary of SPARK analysis
+=========================
+
+-------------------------------------------------------------------------------------------------------
+SPARK Analysis results        Total       Flow   Interval   CodePeer     Provers   Justified   Unproved
+-------------------------------------------------------------------------------------------------------
+Data Dependencies                 .          .          .          .           .           .          .
+Flow Dependencies                 .          .          .          .           .           .          .
+Initialization                    8          8          .          .           .           .          .
+Non-Aliasing                      .          .          .          .           .           .          .
+Run-time Checks                  10          .          .          .     10 (Z3)           .          .
+Assertions                        6          .          .          .      6 (Z3)           .          .
+Functional Contracts              6          .          .          .      6 (Z3)           .          .
+LSP Verification                  .          .          .          .           .           .          .
+-------------------------------------------------------------------------------------------------------
+Total                            30    8 (27%)          .          .    22 (73%)           .          .
+
+
+Analyzed 2 units
+in unit fibonacci, 3 subprograms and packages out of 3 analyzed
+  Fibonacci at fibonacci.ads:1 flow analyzed (0 errors and 0 warnings) and proved (0 checks)
+  Fibonacci.Comp at fibonacci.ads:24 flow analyzed (0 errors and 0 warnings) and proved (11 checks)
+  Fibonacci.Fibonacci at fibonacci.ads:5 flow analyzed (0 errors and 0 warnings) and proved (11 checks)
+in unit main, 0 subprograms and packages out of 1 analyzed
+  Main at main.adb:6 skipped
