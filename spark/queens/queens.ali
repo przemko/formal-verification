@@ -1,0 +1,37 @@
+V "GNAT Lib v2016"
+A -mmacosx-version-min=10.12.4
+A -gnatA
+A -mtune=core2
+A -fPIC
+P ZX
+
+RN
+RV NO_RECURSION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U queens%b		queens.adb		9ae47c0c NE OO SU
+W interfaces%s		interfac.ads		interfac.ali
+
+U queens%s		queens.ads		cc251aef EE NE OO SU
+
+D interfac.ads		20160516092928 5ab55268 interfaces%s
+D queens.ads		20170222080402 cc251aef queens%s
+D queens.adb		20170222080402 0c74348b queens%b
+D system.ads		20160516092931 c3282aa7 system%s
+X 1 interfac.ads
+38K9*Interfaces 184e15 3|1w6 1r22
+74M9*Unsigned_32 3|6r26 10r11 11r11
+121V13*Shift_Left{74M9} 3|36s18
+X 2 queens.ads
+1V10*Queens{natural} 1>18 3|3b10 38l5 38t11
+1i18 N{integer} 3r12 3r28 3|3b18 36r37
+X 3 queens.adb
+6V13 T{natural} 6b13 6>16 6>19 6>22 23s22 32l8 32t9 36s11
+6m16 A{1|74M9} 15r10 17r15 23r25
+6m19 B{1|74M9} 17r25 23r33
+6m22 C{1|74M9} 17r36 23r46
+9i7 F{natural} 18m10 23m13 23r18 30r14
+10m7 E{1|74M9} 17m10 20r16 22r18 22r25 24m13 24r18
+11m7 D{1|74M9} 22m13 23r29 23r37 23r50 24r22
+

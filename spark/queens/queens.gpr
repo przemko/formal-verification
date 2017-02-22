@@ -1,0 +1,6 @@
+project Queens is
+
+   for Main use ("main.adb");
+
+end Queens;
+

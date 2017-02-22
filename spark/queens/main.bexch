@@ -1,0 +1,18 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+/Users/przemko/Repositories/github/przemko/formal-verification/spark/queems/queens.gpr
+20170221202914
+[BOUND OBJECT FILES]
+/Users/przemko/Repositories/github/przemko/formal-verification/spark/queems/queens.o
+/Users/przemko/Repositories/github/przemko/formal-verification/spark/queems/main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-L/Users/przemko/Repositories/github/przemko/formal-verification/spark/queems/
+-L/Users/przemko/Repositories/github/przemko/formal-verification/spark/queems/
+-L/usr/local/gnat2016/lib/gcc/x86_64-apple-darwin14.5.0/4.9.4/adalib/
+-static
+/usr/local/gnat2016/lib/gcc/x86_64-apple-darwin14.5.0/4.9.4/adalib/libgnat.a
