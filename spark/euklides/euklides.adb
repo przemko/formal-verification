@@ -19,14 +19,14 @@ package body Euklides with SPARK_Mode is
          pragma Loop_Invariant (Local_B = A * R + B * S);
          Remainder := Local_A mod Local_B;
          Quotient := Local_A / Local_B;
-         pragma Assert (Remainder = Local_A - Quotient * Local_B);
+         --pragma Assert (Remainder = Local_A - Quotient * Local_B);
          Local_A := Local_B;
          Local_B := Remainder;
          Temp_R := R;
          Temp_S := S;
          R := X - Quotient * R;
          S := Y - Quotient * S;
-         pragma Assert (A * R + B * S = A * X + B * Y - Quotient * (A * Temp_R + B * Temp_S));
+         --pragma Assert (A * R + B * S = A * X + B * Y - Quotient * (A * Temp_R + B * Temp_S));
          X := Temp_R;
          Y := Temp_S; 
       end loop;
