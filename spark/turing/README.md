@@ -17,6 +17,8 @@ $ ./main
 
 ## Formalna weryfikacja
 
+### Wersja SPARK GPL 2016
+
 ```
 $ gnatprove -P turing.gpr --prover=z3
 Phase 1 of 2: generation of Global contracts ...
@@ -56,6 +58,10 @@ Gdyby mimo zastosowania programu dowodzącego **Z3** nie powiodło się udowodni
 ```
 $ gnatprove -P turing.gpr --prover=z3 --steps=250
 ```
+
+### Wersja SPARK Discovery 2017
+
+Nie są uwzględniane kontrakty dla funkcji rekurencyjnych.
 
 ## Usuwanie zbędnych plików
   
