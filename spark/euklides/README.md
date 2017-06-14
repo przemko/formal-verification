@@ -1,4 +1,13 @@
-wersja 2016: gnatprove -P euklides.gpr --level=2
-wersja 2017: gnatprove -P euklides.gpr
-             w tej wersji nie są potrzebne już dwie assercje (zakomentowane)
+### Wersja SPARK GPL 2016
+```bash
+gnatprove -P euklides.gpr --level=2
+```
+
+### Wersja SPARK Discovery 2017
+
+```bash
+gnatprove -P euklides.gpr
+```
+tej wersji nie są już potrzebne dwie assercje (zakomentowane).
+
 
