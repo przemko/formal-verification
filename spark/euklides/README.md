@@ -8,6 +8,6 @@ gnatprove -P euklides.gpr --level=2
 ```bash
 gnatprove -P euklides.gpr
 ```
-tej wersji nie są już potrzebne dwie assercje (zakomentowane).
+W tej wersji nie są już potrzebne dwie assercje (zakomentowane).
 
 
