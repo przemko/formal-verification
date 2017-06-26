@@ -1,4 +1,4 @@
-#Przykład Turinga
+# Przykład Turinga
 
 ## Kompilacja i uruchamianie
 
