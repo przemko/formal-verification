@@ -3,7 +3,7 @@ with Split;
 
 procedure Main is
 
-   V : Integer := 5;
+   V : Integer := 6;
    T : Split.Data (1..10) := (4, 2, 3, 6, 7, 1, 4, 8, 4, 6);
    B1, B2 : Integer;
 
