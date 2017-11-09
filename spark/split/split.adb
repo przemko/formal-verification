@@ -6,6 +6,12 @@ package body Split is
    is
       P1 : Integer := T'First;
       P2 : Integer := T'Last;
+
+      -- T'First   B1       P1        P2        B2      T'Last
+      -- +--------+--------+------------+---------+----------+
+      -- |  < V   |   = V  |    ???     |   = V   |   > V    |
+      -- +--------+--------+------------+---------+----------+
+
    begin
       B1 := T'First;
       B2 := T'Last;
