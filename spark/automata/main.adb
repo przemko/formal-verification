@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 -- $ gnatprove -P automata.gpr --level=1
 
-=======
->>>>>>> 3f5725c7c7ae00a8c24395983427ea6f3cfb78d2
 with Ada.Text_IO; use Ada.Text_IO;
 with Automata;   use Automata;
 
