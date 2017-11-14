@@ -1,10 +1,17 @@
-### Wersja SPARK GPL 2016
+# Automat skończony
+
+## Weryfikacja
+
+### SPARK GPL 2016
 
 ```bash
 gnatprove -P automata.gpr
 ```
 
-### Wersja SPARK Discovery 2017
+### SPARK Discovery 2017
 
-Nie weryfikuje się.
+Wymaga programu Z3:
+```bash
+gnatprove -P automata.gpr --prover=z3
+```
 

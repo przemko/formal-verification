@@ -1,0 +1,6 @@
+project Split is
+
+   for Main use ("main.adb");
+
+end Split;
+

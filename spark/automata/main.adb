@@ -1,4 +1,4 @@
--- $ gnatprove -P automata.gpr
+-- $ gnatprove -P automata.gpr --level=1
 
 with Ada.Text_IO; use Ada.Text_IO;
 with Automata;   use Automata;
@@ -12,6 +12,6 @@ procedure Main is
      2 => (2, 0, 1, 2, 0, 1, 2, 0, 1, 2));
 begin
   Put_Line ("   State = " & Natural'Image (Automaton (W (W'First + 1 .. W'Last), Trans)));
-  Put_Line ("Reminder = " & Integer'Image (N mod 3));
+  Put_Line ("Reminder = " & Integer'Image (N rem 3));
 end Main;
 
