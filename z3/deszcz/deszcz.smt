@@ -8,8 +8,8 @@
 ; Zbiór formuł {pada, pada => mokro, not mokro} jest sprzeczny, zatem mokro
 ; jest logiczną konsekwencją zbioru formuł {pada, pada => mokro}.
 
-(declare-fun mokro () Bool)
-(declare-fun pada () Bool)
+(declare-const mokro Bool)
+(declare-const pada Bool)
 (assert pada)
 (assert (=> pada mokro))
 (assert (not mokro))
