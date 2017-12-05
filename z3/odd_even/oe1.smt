@@ -1,6 +1,6 @@
-; Zadeklarujmy predykat even : Int -> Bool, który jest spełniony przez parzyste liczby
-; naturalne i predykat odd : Int -> Bool, który spełniony jest przez nieparzyste  liczby
-; naturalne.
+; Zadeklarujmy predykat even : Int -> Bool, który jest spełniony przez parzyste
+; liczby naturalne i predykat odd : Int -> Bool, który spełniony jest przez
+; nieparzyste liczby naturalne.
 ;
 ; O predykatach tych wiemy, że:
 ; 
@@ -8,8 +8,8 @@
 ; 2. jeśli liczba n jest nieparzysta, to liczba n+1 jest parzysta
 ; 3. jeśli liczba n jest parzysta, to liczba n+1 jest nieparzysta
 ;
-; Dodajmy do zbioru asercji formułę, że istnieje liczba parzysta n, tż. liczba n+1
-; jest również parzysta.
+; Dodajmy do zbioru asercji formułę, że istnieje liczba parzysta n, tż. liczba
+; n+1 jest również parzysta.
 ;
 ; Okazuje się, że powyższa asercja nie jest sprzeczna z wcześniejszymi. 
 ;
@@ -24,8 +24,8 @@
 ;       true)
 ;   )
 ;
-; Jak widać, w powyższym modelu przyjęto, że wszystkie liczby są parzyste i jednocześnie
-; nieparzyste.
+; Jak widać, w powyższym modelu przyjęto, że wszystkie liczby są parzyste i
+; jednocześnie nieparzyste.
 ; 
 ; UWAGA: nasz zbiór asercji tego nie wyklucza!!!
 
