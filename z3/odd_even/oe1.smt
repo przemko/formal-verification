@@ -11,16 +11,24 @@
 ; Dodajmy do zbioru asercji formułę, że istnieje liczba parzysta n, tż. liczba
 ; n+1 jest również parzysta.
 ;
+; Uruchomienie:
+; 
+;   $ z3 -smt2 oe1.smt
+;   sat
+;
 ; Okazuje się, że powyższa asercja nie jest sprzeczna z wcześniejszymi. 
 ;
-; Oto model dla powyższego zbioru formuł uzyskany poleceniem (get-model):
+; Po odkomentowaniu w ostatnim wierszu polecenia (get-model) otrzymamy model
+; dla zbioru wszystkich formuł:
 ;
+;   $ z3 -smt2 oe1.smt 
+;   sat
 ;   (model 
 ;     (define-fun n!0 () Int
 ;       5853)
 ;     (define-fun even ((x!0 Int)) Bool
 ;       true)
-;     (define-fun odd ((x!0 Int)) Bool
+;    (define-fun odd ((x!0 Int)) Bool
 ;       true)
 ;   )
 ;
@@ -39,5 +47,5 @@
 (assert (exists ((n Int)) (and (even n) (even (+ n 1)))))
 
 (check-sat)
-(get-model)
+;(get-model)
 
