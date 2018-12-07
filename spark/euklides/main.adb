@@ -1,13 +1,13 @@
 -- $ gnatprove -P euklides.gpr --level=2
 
 with Ada.Text_IO; use Ada.Text_IO;
-with Euklides;    use Euklides;
+with Solve;
 
 procedure Main is
 
    package Positive_IO is new Ada.Text_IO.Integer_IO (Positive);
    use Positive_IO;
-
+   
    A, B : Positive;
    X, Y : Integer; 
    Z : Positive;
